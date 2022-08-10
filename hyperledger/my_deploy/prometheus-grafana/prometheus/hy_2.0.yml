@@ -1,0 +1,355 @@
+
+global:
+  scrape_interval: 1s
+  external_labels:
+    monitor: 'devopsage-monitor'
+
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets: [localhost:9090]
+
+
+  - job_name: orderer0
+    static_configs:
+      - targets: [orderer0.example.com:9443]
+
+
+  - job_name: orderer1
+    static_configs:
+      - targets: [orderer1.example.com:9443]
+
+
+  - job_name: orderer2
+    static_configs:
+      - targets: [orderer2.example.com:9443]
+
+
+  - job_name: orderer3
+    static_configs:
+      - targets: [orderer3.example.com:9443]
+
+
+  - job_name: orderer4
+    static_configs:
+      - targets: [orderer4.example.com:9443]
+
+
+  - job_name: orderer5
+    static_configs:
+      - targets: [orderer5.example.com:9443]
+
+
+  - job_name: orderer6
+    static_configs:
+      - targets: [orderer6.example.com:9443]
+
+
+  - job_name: orderer7
+    static_configs:
+      - targets: [orderer7.example.com:9443]
+
+
+  - job_name: orderer8
+    static_configs:
+      - targets: [orderer8.example.com:9443]
+
+
+  - job_name: orderer9
+    static_configs:
+      - targets: [orderer9.example.com:9443]
+
+
+  - job_name: orderer10
+    static_configs:
+      - targets: [orderer10.example.com:9443]
+
+
+  - job_name: orderer11
+    static_configs:
+      - targets: [orderer11.example.com:9443]
+
+
+  - job_name: orderer12
+    static_configs:
+      - targets: [orderer12.example.com:9443]
+
+
+  - job_name: orderer13
+    static_configs:
+      - targets: [orderer13.example.com:9443]
+
+
+  - job_name: orderer14
+    static_configs:
+      - targets: [orderer14.example.com:9443]
+
+
+  - job_name: orderer15
+    static_configs:
+      - targets: [orderer15.example.com:9443]
+
+
+  - job_name: orderer16
+    static_configs:
+      - targets: [orderer16.example.com:9443]
+
+
+  - job_name: orderer17
+    static_configs:
+      - targets: [orderer17.example.com:9443]
+
+
+  - job_name: orderer18
+    static_configs:
+      - targets: [orderer18.example.com:9443]
+
+
+  - job_name: orderer19
+    static_configs:
+      - targets: [orderer19.example.com:9443]
+
+
+  - job_name: orderer20
+    static_configs:
+      - targets: [orderer20.example.com:9443]
+
+
+  - job_name: orderer21
+    static_configs:
+      - targets: [orderer21.example.com:9443]
+
+
+  - job_name: orderer22
+    static_configs:
+      - targets: [orderer22.example.com:9443]
+
+
+  - job_name: orderer23
+    static_configs:
+      - targets: [orderer23.example.com:9443]
+
+
+  - job_name: orderer24
+    static_configs:
+      - targets: [orderer24.example.com:9443]
+
+
+  - job_name: orderer25
+    static_configs:
+      - targets: [orderer25.example.com:9443]
+
+
+  - job_name: orderer26
+    static_configs:
+      - targets: [orderer26.example.com:9443]
+
+
+  - job_name: orderer27
+    static_configs:
+      - targets: [orderer27.example.com:9443]
+
+
+  - job_name: orderer28
+    static_configs:
+      - targets: [orderer28.example.com:9443]
+
+
+  - job_name: orderer29
+    static_configs:
+      - targets: [orderer29.example.com:9443]
+
+
+  - job_name: orderer30
+    static_configs:
+      - targets: [orderer30.example.com:9443]
+
+
+  - job_name: orderer31
+    static_configs:
+      - targets: [orderer31.example.com:9443]
+
+
+  - job_name: peer0_org1
+    static_configs:
+      - targets: [peer0.org1.example.com:9444]
+
+
+  - job_name: peer1_org1
+    static_configs:
+      - targets: [peer1.org1.example.com:9444]
+
+
+  - job_name: peer2_org1
+    static_configs:
+      - targets: [peer2.org1.example.com:9444]
+
+
+  - job_name: peer3_org1
+    static_configs:
+      - targets: [peer3.org1.example.com:9444]
+
+
+  - job_name: peer4_org1
+    static_configs:
+      - targets: [peer4.org1.example.com:9444]
+
+
+  - job_name: peer5_org1
+    static_configs:
+      - targets: [peer5.org1.example.com:9444]
+
+
+  - job_name: peer6_org1
+    static_configs:
+      - targets: [peer6.org1.example.com:9444]
+
+
+  - job_name: peer7_org1
+    static_configs:
+      - targets: [peer7.org1.example.com:9444]
+
+
+  - job_name: peer8_org1
+    static_configs:
+      - targets: [peer8.org1.example.com:9444]
+
+
+  - job_name: peer9_org1
+    static_configs:
+      - targets: [peer9.org1.example.com:9444]
+
+
+  - job_name: peer10_org1
+    static_configs:
+      - targets: [peer10.org1.example.com:9444]
+
+
+  - job_name: peer11_org1
+    static_configs:
+      - targets: [peer11.org1.example.com:9444]
+
+
+  - job_name: peer12_org1
+    static_configs:
+      - targets: [peer12.org1.example.com:9444]
+
+
+  - job_name: peer13_org1
+    static_configs:
+      - targets: [peer13.org1.example.com:9444]
+
+
+  - job_name: peer14_org1
+    static_configs:
+      - targets: [peer14.org1.example.com:9444]
+
+
+  - job_name: peer15_org1
+    static_configs:
+      - targets: [peer15.org1.example.com:9444]
+
+
+  - job_name: peer16_org1
+    static_configs:
+      - targets: [peer16.org1.example.com:9444]
+
+
+  - job_name: peer17_org1
+    static_configs:
+      - targets: [peer17.org1.example.com:9444]
+
+
+  - job_name: peer18_org1
+    static_configs:
+      - targets: [peer18.org1.example.com:9444]
+
+
+  - job_name: peer19_org1
+    static_configs:
+      - targets: [peer19.org1.example.com:9444]
+
+
+  - job_name: peer20_org1
+    static_configs:
+      - targets: [peer20.org1.example.com:9444]
+
+
+  - job_name: peer21_org1
+    static_configs:
+      - targets: [peer21.org1.example.com:9444]
+
+
+  - job_name: peer22_org1
+    static_configs:
+      - targets: [peer22.org1.example.com:9444]
+
+
+  - job_name: peer23_org1
+    static_configs:
+      - targets: [peer23.org1.example.com:9444]
+
+
+  - job_name: peer24_org1
+    static_configs:
+      - targets: [peer24.org1.example.com:9444]
+
+
+  - job_name: peer25_org1
+    static_configs:
+      - targets: [peer25.org1.example.com:9444]
+
+
+  - job_name: peer26_org1
+    static_configs:
+      - targets: [peer26.org1.example.com:9444]
+
+
+  - job_name: peer27_org1
+    static_configs:
+      - targets: [peer27.org1.example.com:9444]
+
+
+  - job_name: peer28_org1
+    static_configs:
+      - targets: [peer28.org1.example.com:9444]
+
+
+  - job_name: peer29_org1
+    static_configs:
+      - targets: [peer29.org1.example.com:9444]
+
+
+  - job_name: peer30_org1
+    static_configs:
+      - targets: [peer30.org1.example.com:9444]
+
+
+  - job_name: peer31_org1
+    static_configs:
+      - targets: [peer31.org1.example.com:9444]
+
+
+  - job_name: cli0
+    static_configs:
+      - targets: [cli0.com:9445]
+
+
+  - job_name: cli1
+    static_configs:
+      - targets: [cli1.com:9445]
+
+
+  - job_name: cli2
+    static_configs:
+      - targets: [cli2.com:9445]
+
+
+  - job_name: cadvisor
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['cadvisor:8080']
+  - job_name: node
+    static_configs:
+      - targets: ['node-exporter:9100']
+

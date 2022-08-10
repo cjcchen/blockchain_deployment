@@ -1,0 +1,499 @@
+
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# ---------------------------------------------------------------------------
+# OrdererOrgs - Definition of organizations managing orderer nodes
+# ---------------------------------------------------------------------------
+OrdererOrgs:
+  - Name: Orderer
+    Domain: example.com
+    EnableNodeOUs: true
+
+    Specs:
+      - Hostname: orderer0
+        SANS:
+          - 10.2.0.162
+      - Hostname: orderer1
+        SANS:
+          - 10.2.0.115
+      - Hostname: orderer2
+        SANS:
+          - 10.2.0.47
+      - Hostname: orderer3
+        SANS:
+          - 10.2.0.7
+      - Hostname: orderer4
+        SANS:
+          - 10.2.0.138
+      - Hostname: orderer5
+        SANS:
+          - 10.2.0.169
+      - Hostname: orderer6
+        SANS:
+          - 10.2.0.27
+      - Hostname: orderer7
+        SANS:
+          - 10.2.0.235
+      - Hostname: orderer8
+        SANS:
+          - 10.2.0.30
+      - Hostname: orderer9
+        SANS:
+          - 10.2.0.71
+      - Hostname: orderer10
+        SANS:
+          - 10.2.0.215
+      - Hostname: orderer11
+        SANS:
+          - 10.2.0.46
+      - Hostname: orderer12
+        SANS:
+          - 10.2.0.213
+      - Hostname: orderer13
+        SANS:
+          - 10.2.0.22
+      - Hostname: orderer14
+        SANS:
+          - 10.2.0.156
+      - Hostname: orderer15
+        SANS:
+          - 10.2.0.78
+      - Hostname: orderer16
+        SANS:
+          - 10.2.0.81
+      - Hostname: orderer17
+        SANS:
+          - 10.2.0.49
+      - Hostname: orderer18
+        SANS:
+          - 10.2.0.167
+      - Hostname: orderer19
+        SANS:
+          - 10.2.0.77
+      - Hostname: orderer20
+        SANS:
+          - 10.2.0.229
+      - Hostname: orderer21
+        SANS:
+          - 10.2.0.66
+      - Hostname: orderer22
+        SANS:
+          - 10.2.0.93
+      - Hostname: orderer23
+        SANS:
+          - 10.2.0.183
+      - Hostname: orderer24
+        SANS:
+          - 10.2.0.94
+      - Hostname: orderer25
+        SANS:
+          - 10.2.0.246
+      - Hostname: orderer26
+        SANS:
+          - 10.2.0.252
+      - Hostname: orderer27
+        SANS:
+          - 10.2.0.119
+      - Hostname: orderer28
+        SANS:
+          - 10.2.0.62
+      - Hostname: orderer29
+        SANS:
+          - 10.2.0.225
+      - Hostname: orderer30
+        SANS:
+          - 10.2.0.148
+      - Hostname: orderer31
+        SANS:
+          - 10.2.0.128
+      - Hostname: orderer32
+        SANS:
+          - 10.2.0.189
+      - Hostname: orderer33
+        SANS:
+          - 10.2.0.21
+      - Hostname: orderer34
+        SANS:
+          - 10.2.0.197
+      - Hostname: orderer35
+        SANS:
+          - 10.2.0.206
+      - Hostname: orderer36
+        SANS:
+          - 10.2.0.249
+      - Hostname: orderer37
+        SANS:
+          - 10.2.0.122
+      - Hostname: orderer38
+        SANS:
+          - 10.2.0.218
+      - Hostname: orderer39
+        SANS:
+          - 10.2.0.106
+      - Hostname: orderer40
+        SANS:
+          - 10.2.0.82
+      - Hostname: orderer41
+        SANS:
+          - 10.2.0.90
+      - Hostname: orderer42
+        SANS:
+          - 10.2.0.72
+      - Hostname: orderer43
+        SANS:
+          - 10.2.0.201
+      - Hostname: orderer44
+        SANS:
+          - 10.2.0.8
+      - Hostname: orderer45
+        SANS:
+          - 10.2.0.227
+      - Hostname: orderer46
+        SANS:
+          - 10.2.0.65
+      - Hostname: orderer47
+        SANS:
+          - 10.2.0.17
+      - Hostname: orderer48
+        SANS:
+          - 10.2.0.145
+      - Hostname: orderer49
+        SANS:
+          - 10.2.0.36
+      - Hostname: orderer50
+        SANS:
+          - 10.2.0.236
+      - Hostname: orderer51
+        SANS:
+          - 10.2.0.163
+      - Hostname: orderer52
+        SANS:
+          - 10.2.0.208
+      - Hostname: orderer53
+        SANS:
+          - 10.2.0.28
+      - Hostname: orderer54
+        SANS:
+          - 10.2.0.141
+      - Hostname: orderer55
+        SANS:
+          - 10.2.0.73
+      - Hostname: orderer56
+        SANS:
+          - 10.2.0.240
+      - Hostname: orderer57
+        SANS:
+          - 10.2.0.58
+      - Hostname: orderer58
+        SANS:
+          - 10.2.0.129
+      - Hostname: orderer59
+        SANS:
+          - 10.2.0.98
+      - Hostname: orderer60
+        SANS:
+          - 10.2.0.54
+      - Hostname: orderer61
+        SANS:
+          - 10.2.0.173
+      - Hostname: orderer62
+        SANS:
+          - 10.2.0.52
+      - Hostname: orderer63
+        SANS:
+          - 10.2.0.186
+      - Hostname: orderer64
+        SANS:
+          - 10.2.0.204
+      - Hostname: orderer65
+        SANS:
+          - 10.2.0.166
+      - Hostname: orderer66
+        SANS:
+          - 10.2.0.210
+      - Hostname: orderer67
+        SANS:
+          - 10.2.0.34
+      - Hostname: orderer68
+        SANS:
+          - 10.2.0.190
+      - Hostname: orderer69
+        SANS:
+          - 10.2.0.237
+      - Hostname: orderer70
+        SANS:
+          - 10.2.0.114
+      - Hostname: orderer71
+        SANS:
+          - 10.2.0.10
+      - Hostname: orderer72
+        SANS:
+          - 10.2.0.68
+      - Hostname: orderer73
+        SANS:
+          - 10.2.0.112
+      - Hostname: orderer74
+        SANS:
+          - 10.2.0.221
+      - Hostname: orderer75
+        SANS:
+          - 10.2.0.95
+      - Hostname: orderer76
+        SANS:
+          - 10.2.0.220
+      - Hostname: orderer77
+        SANS:
+          - 10.2.0.242
+      - Hostname: orderer78
+        SANS:
+          - 10.2.0.130
+      - Hostname: orderer79
+        SANS:
+          - 10.2.0.248
+      - Hostname: orderer80
+        SANS:
+          - 10.2.0.174
+      - Hostname: orderer81
+        SANS:
+          - 10.2.0.230
+      - Hostname: orderer82
+        SANS:
+          - 10.2.0.182
+      - Hostname: orderer83
+        SANS:
+          - 10.2.0.187
+      - Hostname: orderer84
+        SANS:
+          - 10.2.0.111
+      - Hostname: orderer85
+        SANS:
+          - 10.2.0.133
+      - Hostname: orderer86
+        SANS:
+          - 10.2.0.39
+      - Hostname: orderer87
+        SANS:
+          - 10.2.0.20
+      - Hostname: orderer88
+        SANS:
+          - 10.2.0.159
+      - Hostname: orderer89
+        SANS:
+          - 10.2.0.44
+      - Hostname: orderer90
+        SANS:
+          - 10.2.0.4
+      - Hostname: orderer91
+        SANS:
+          - 10.2.0.99
+      - Hostname: orderer92
+        SANS:
+          - 10.2.0.80
+      - Hostname: orderer93
+        SANS:
+          - 10.2.0.84
+      - Hostname: orderer94
+        SANS:
+          - 10.2.0.2
+      - Hostname: orderer95
+        SANS:
+          - 10.2.0.241
+      - Hostname: orderer96
+        SANS:
+          - 10.2.0.83
+      - Hostname: orderer97
+        SANS:
+          - 10.2.0.172
+      - Hostname: orderer98
+        SANS:
+          - 10.2.0.132
+      - Hostname: orderer99
+        SANS:
+          - 10.2.0.121
+      - Hostname: orderer100
+        SANS:
+          - 10.2.0.143
+      - Hostname: orderer101
+        SANS:
+          - 10.2.0.24
+      - Hostname: orderer102
+        SANS:
+          - 10.2.0.179
+      - Hostname: orderer103
+        SANS:
+          - 10.2.0.60
+      - Hostname: orderer104
+        SANS:
+          - 10.2.0.87
+      - Hostname: orderer105
+        SANS:
+          - 10.2.0.232
+      - Hostname: orderer106
+        SANS:
+          - 10.2.0.253
+      - Hostname: orderer107
+        SANS:
+          - 10.2.0.228
+      - Hostname: orderer108
+        SANS:
+          - 10.2.0.55
+      - Hostname: orderer109
+        SANS:
+          - 10.2.0.195
+      - Hostname: orderer110
+        SANS:
+          - 10.2.0.131
+      - Hostname: orderer111
+        SANS:
+          - 10.2.0.250
+      - Hostname: orderer112
+        SANS:
+          - 10.2.0.50
+      - Hostname: orderer113
+        SANS:
+          - 10.2.0.91
+      - Hostname: orderer114
+        SANS:
+          - 10.2.0.48
+      - Hostname: orderer115
+        SANS:
+          - 10.2.0.51
+      - Hostname: orderer116
+        SANS:
+          - 10.2.0.170
+
+# ---------------------------------------------------------------------------
+# PeerOrgs - Definition of organizations managing peer nodes
+# ---------------------------------------------------------------------------
+PeerOrgs:
+  - Name: Org1
+    Domain: org1.example.com
+    EnableNodeOUs: true
+
+    Template:
+      Count: 117
+      SANS:
+        - 10.2.0.162
+        - 10.2.0.115
+        - 10.2.0.47
+        - 10.2.0.7
+        - 10.2.0.138
+        - 10.2.0.169
+        - 10.2.0.27
+        - 10.2.0.235
+        - 10.2.0.30
+        - 10.2.0.71
+        - 10.2.0.215
+        - 10.2.0.46
+        - 10.2.0.213
+        - 10.2.0.22
+        - 10.2.0.156
+        - 10.2.0.78
+        - 10.2.0.81
+        - 10.2.0.49
+        - 10.2.0.167
+        - 10.2.0.77
+        - 10.2.0.229
+        - 10.2.0.66
+        - 10.2.0.93
+        - 10.2.0.183
+        - 10.2.0.94
+        - 10.2.0.246
+        - 10.2.0.252
+        - 10.2.0.119
+        - 10.2.0.62
+        - 10.2.0.225
+        - 10.2.0.148
+        - 10.2.0.128
+        - 10.2.0.189
+        - 10.2.0.21
+        - 10.2.0.197
+        - 10.2.0.206
+        - 10.2.0.249
+        - 10.2.0.122
+        - 10.2.0.218
+        - 10.2.0.106
+        - 10.2.0.82
+        - 10.2.0.90
+        - 10.2.0.72
+        - 10.2.0.201
+        - 10.2.0.8
+        - 10.2.0.227
+        - 10.2.0.65
+        - 10.2.0.17
+        - 10.2.0.145
+        - 10.2.0.36
+        - 10.2.0.236
+        - 10.2.0.163
+        - 10.2.0.208
+        - 10.2.0.28
+        - 10.2.0.141
+        - 10.2.0.73
+        - 10.2.0.240
+        - 10.2.0.58
+        - 10.2.0.129
+        - 10.2.0.98
+        - 10.2.0.54
+        - 10.2.0.173
+        - 10.2.0.52
+        - 10.2.0.186
+        - 10.2.0.204
+        - 10.2.0.166
+        - 10.2.0.210
+        - 10.2.0.34
+        - 10.2.0.190
+        - 10.2.0.237
+        - 10.2.0.114
+        - 10.2.0.10
+        - 10.2.0.68
+        - 10.2.0.112
+        - 10.2.0.221
+        - 10.2.0.95
+        - 10.2.0.220
+        - 10.2.0.242
+        - 10.2.0.130
+        - 10.2.0.248
+        - 10.2.0.174
+        - 10.2.0.230
+        - 10.2.0.182
+        - 10.2.0.187
+        - 10.2.0.111
+        - 10.2.0.133
+        - 10.2.0.39
+        - 10.2.0.20
+        - 10.2.0.159
+        - 10.2.0.44
+        - 10.2.0.4
+        - 10.2.0.99
+        - 10.2.0.80
+        - 10.2.0.84
+        - 10.2.0.2
+        - 10.2.0.241
+        - 10.2.0.83
+        - 10.2.0.172
+        - 10.2.0.132
+        - 10.2.0.121
+        - 10.2.0.143
+        - 10.2.0.24
+        - 10.2.0.179
+        - 10.2.0.60
+        - 10.2.0.87
+        - 10.2.0.232
+        - 10.2.0.253
+        - 10.2.0.228
+        - 10.2.0.55
+        - 10.2.0.195
+        - 10.2.0.131
+        - 10.2.0.250
+        - 10.2.0.50
+        - 10.2.0.91
+        - 10.2.0.48
+        - 10.2.0.51
+        - 10.2.0.170
+
+    Users:
+      Count: 1
+

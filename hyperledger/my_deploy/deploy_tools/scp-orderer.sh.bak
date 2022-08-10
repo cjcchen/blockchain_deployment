@@ -1,0 +1,63 @@
+set -x
+
+./script/gen-config.sh
+
+. config/ip_config.sh
+
+
+function sshnode(cmd) {
+count=0
+for ip in ${order_list[@]}
+do
+echo $ip
+ssh -i ~/.ssh/ssh-2022-03-24.key -n -o BatchMode=yes -o StrictHostKeyChecking=no ubuntu@${ip} "sudo mkdir -p /var/hyperledger; sudo chmod 0777 /var/hyperledger;"
+((count++))
+done
+
+while [ $count -gt 0 ]; do
+        wait $pids
+        count=`expr $count - 1`
+done
+}
+
+
+i=0
+for ip in ${order_list[@]}
+do
+echo $ip
+ssh -i ~/.ssh/ssh-2022-03-24.key -n -o BatchMode=yes -o StrictHostKeyChecking=no ubuntu@${ip} "sudo mkdir -p /var/hyperledger; sudo chmod 0777 /var/hyperledger;"
+ssh -i ~/.ssh/ssh-2022-03-24.key -n -o BatchMode=yes -o StrictHostKeyChecking=no ubuntu@${ip} "sudo chmod 0777 /var/hyperledger"
+ssh -i ~/.ssh/ssh-2022-03-24.key -n -o BatchMode=yes -o StrictHostKeyChecking=no ubuntu@${ip} "rm -rf /home/ubuntu/hyperledger/*"
+ssh -i ~/.ssh/ssh-2022-03-24.key -n -o BatchMode=yes -o StrictHostKeyChecking=no ubuntu@${ip} "mkdir -p /home/ubuntu/hyperledger/{script,orderer,config,peer}"
+scp -i ~/.ssh/ssh-2022-03-24.key -r script/clear.sh  ubuntu@${ip}:/home/ubuntu/hyperledger/script
+scp -i ~/.ssh/ssh-2022-03-24.key -r orderer${i}.example.com/*  ubuntu@${ip}:/home/ubuntu/hyperledger/orderer
+scp -i ~/.ssh/ssh-2022-03-24.key -r script/re-write_host.sh  ubuntu@${ip}:/home/ubuntu/hyperledger/script
+scp -i ~/.ssh/ssh-2022-03-24.key -r config/hosts  ubuntu@${ip}:/home/ubuntu/hyperledger/config/
+ssh -i ~/.ssh/ssh-2022-03-24.key -n -o BatchMode=yes -o StrictHostKeyChecking=no ubuntu@${ip} "cd /home/ubuntu/hyperledger/; ./script/re-write_host.sh"
+ssh -i ~/.ssh/ssh-2022-03-24.key -n -o BatchMode=yes -o StrictHostKeyChecking=no ubuntu@${ip} "cp /etc/hosts /home/ubuntu/hyperledger/; sudo cp /home/ubuntu/hyperledger/config/new_hosts /etc/hosts;"
+
+((i++))
+done
+
+i=0
+for ip in ${list[@]}
+do
+echo $ip
+ssh -i ~/.ssh/ssh-2022-03-24.key -n -o BatchMode=yes -o StrictHostKeyChecking=no ubuntu@${ip} "sudo mkdir -p /var/hyperledger; sudo chmod 0777 /var/hyperledger;"
+ssh -i ~/.ssh/ssh-2022-03-24.key -n -o BatchMode=yes -o StrictHostKeyChecking=no ubuntu@${ip} "sudo chmod 0777 /var/hyperledger"
+ssh -i ~/.ssh/ssh-2022-03-24.key -n -o BatchMode=yes -o StrictHostKeyChecking=no ubuntu@${ip} "rm -rf /home/ubuntu/hyperledger/data"
+ssh -i ~/.ssh/ssh-2022-03-24.key -n -o BatchMode=yes -o StrictHostKeyChecking=no ubuntu@${ip} "rm -rf /home/ubuntu/hyperledger/peer"
+ssh -i ~/.ssh/ssh-2022-03-24.key -n -o BatchMode=yes -o StrictHostKeyChecking=no ubuntu@${ip} "mkdir -p /home/ubuntu/hyperledger/{script,orderer,config,peer}"
+scp -i ~/.ssh/ssh-2022-03-24.key -r script/clear.sh  ubuntu@${ip}:/home/ubuntu/hyperledger/script
+scp -i ~/.ssh/ssh-2022-03-24.key -r script/re-write_host.sh  ubuntu@${ip}:/home/ubuntu/hyperledger/script
+scp -i ~/.ssh/ssh-2022-03-24.key -r config/hosts  ubuntu@${ip}:/home/ubuntu/hyperledger/config/
+ssh -i ~/.ssh/ssh-2022-03-24.key -n -o BatchMode=yes -o StrictHostKeyChecking=no ubuntu@${ip} "cd /home/ubuntu/hyperledger/; ./script/re-write_host.sh"
+ssh -i ~/.ssh/ssh-2022-03-24.key -n -o BatchMode=yes -o StrictHostKeyChecking=no ubuntu@${ip} "cp /etc/hosts /home/ubuntu/hyperledger/; sudo cp /home/ubuntu/hyperledger/config/new_hosts /etc/hosts;"
+
+scp -i ~/.ssh/ssh-2022-03-24.key -r peer${i}.org1.example.com/* ubuntu@${ip}:/home/ubuntu/hyperledger/peer/
+
+((i++))
+done
+
+sudo cp config/new_hosts /etc/hosts
+cd ..; ./scp_cli.sh

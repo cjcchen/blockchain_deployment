@@ -1,0 +1,1110 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+---
+################################################################################
+#
+#   Section: Organizations
+#
+#   - This section defines the different organizational identities which will
+#   be referenced later in the configuration.
+#
+################################################################################
+Organizations:
+
+    # SampleOrg defines an MSP using the sampleconfig.  It should never be used
+    # in production but may be used as a template for other definitions
+    - &OrdererOrg
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: OrdererOrg
+
+        # ID to load the MSP definition as
+        ID: OrdererMSP
+
+        # MSPDir is the filesystem path which contains the MSP configuration
+        MSPDir: ../certs/ordererOrganizations/example.com/msp
+
+        # Policies defines the set of policies at this level of the config tree
+        # For organization policies, their canonical path is usually
+        #   /Channel/<Application|Orderer>/<OrgName>/<PolicyName>
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('OrdererMSP.member')"
+            Writers:
+                Type: Signature
+                Rule: "OR('OrdererMSP.member')"
+            Admins:
+                Type: Signature
+                Rule: "OR('OrdererMSP.admin')"
+
+        OrdererEndpoints:
+            - orderer0.example.com:7050
+            - orderer1.example.com:7050
+            - orderer2.example.com:7050
+            - orderer3.example.com:7050
+            - orderer4.example.com:7050
+            - orderer5.example.com:7050
+            - orderer6.example.com:7050
+            - orderer7.example.com:7050
+            - orderer8.example.com:7050
+            - orderer9.example.com:7050
+            - orderer10.example.com:7050
+            - orderer11.example.com:7050
+            - orderer12.example.com:7050
+            - orderer13.example.com:7050
+            - orderer14.example.com:7050
+            - orderer15.example.com:7050
+            - orderer16.example.com:7050
+            - orderer17.example.com:7050
+            - orderer18.example.com:7050
+            - orderer19.example.com:7050
+            - orderer20.example.com:7050
+            - orderer21.example.com:7050
+            - orderer22.example.com:7050
+            - orderer23.example.com:7050
+            - orderer24.example.com:7050
+            - orderer25.example.com:7050
+            - orderer26.example.com:7050
+            - orderer27.example.com:7050
+            - orderer28.example.com:7050
+            - orderer29.example.com:7050
+            - orderer30.example.com:7050
+            - orderer31.example.com:7050
+            - orderer32.example.com:7050
+            - orderer33.example.com:7050
+            - orderer34.example.com:7050
+            - orderer35.example.com:7050
+            - orderer36.example.com:7050
+            - orderer37.example.com:7050
+            - orderer38.example.com:7050
+            - orderer39.example.com:7050
+            - orderer40.example.com:7050
+            - orderer41.example.com:7050
+            - orderer42.example.com:7050
+            - orderer43.example.com:7050
+            - orderer44.example.com:7050
+            - orderer45.example.com:7050
+            - orderer46.example.com:7050
+            - orderer47.example.com:7050
+            - orderer48.example.com:7050
+            - orderer49.example.com:7050
+            - orderer50.example.com:7050
+            - orderer51.example.com:7050
+            - orderer52.example.com:7050
+            - orderer53.example.com:7050
+            - orderer54.example.com:7050
+            - orderer55.example.com:7050
+            - orderer56.example.com:7050
+            - orderer57.example.com:7050
+            - orderer58.example.com:7050
+            - orderer59.example.com:7050
+            - orderer60.example.com:7050
+            - orderer61.example.com:7050
+            - orderer62.example.com:7050
+            - orderer63.example.com:7050
+            - orderer64.example.com:7050
+            - orderer65.example.com:7050
+            - orderer66.example.com:7050
+            - orderer67.example.com:7050
+            - orderer68.example.com:7050
+            - orderer69.example.com:7050
+            - orderer70.example.com:7050
+            - orderer71.example.com:7050
+            - orderer72.example.com:7050
+            - orderer73.example.com:7050
+            - orderer74.example.com:7050
+            - orderer75.example.com:7050
+            - orderer76.example.com:7050
+            - orderer77.example.com:7050
+            - orderer78.example.com:7050
+            - orderer79.example.com:7050
+            - orderer80.example.com:7050
+            - orderer81.example.com:7050
+            - orderer82.example.com:7050
+            - orderer83.example.com:7050
+            - orderer84.example.com:7050
+            - orderer85.example.com:7050
+            - orderer86.example.com:7050
+            - orderer87.example.com:7050
+            - orderer88.example.com:7050
+            - orderer89.example.com:7050
+            - orderer90.example.com:7050
+            - orderer91.example.com:7050
+            - orderer92.example.com:7050
+            - orderer93.example.com:7050
+            - orderer94.example.com:7050
+            - orderer95.example.com:7050
+            - orderer96.example.com:7050
+            - orderer97.example.com:7050
+            - orderer98.example.com:7050
+            - orderer99.example.com:7050
+            - orderer100.example.com:7050
+            - orderer101.example.com:7050
+            - orderer102.example.com:7050
+            - orderer103.example.com:7050
+            - orderer104.example.com:7050
+            - orderer105.example.com:7050
+            - orderer106.example.com:7050
+            - orderer107.example.com:7050
+            - orderer108.example.com:7050
+            - orderer109.example.com:7050
+            - orderer110.example.com:7050
+            - orderer111.example.com:7050
+            - orderer112.example.com:7050
+            - orderer113.example.com:7050
+            - orderer114.example.com:7050
+            - orderer115.example.com:7050
+            - orderer116.example.com:7050
+
+    - &Org1
+        # DefaultOrg defines the organization which is used in the sampleconfig
+        # of the fabric.git development environment
+        Name: Org1MSP
+
+        # ID to load the MSP definition as
+        ID: Org1MSP
+
+        MSPDir: ../certs/peerOrganizations/org1.example.com/msp
+
+        # Policies defines the set of policies at this level of the config tree
+        # For organization policies, their canonical path is usually
+        #   /Channel/<Application|Orderer>/<OrgName>/<PolicyName>
+        Policies:
+            Readers:
+                Type: Signature
+                Rule: "OR('Org1MSP.admin', 'Org1MSP.peer', 'Org1MSP.client')"
+            Writers:
+                Type: Signature
+                Rule: "OR('Org1MSP.admin', 'Org1MSP.client')"
+            Admins:
+                Type: Signature
+                Rule: "OR('Org1MSP.admin')"
+            Endorsement:
+                Type: Signature
+                Rule: "OR('Org1MSP.peer')"
+        AnchorPeers:
+            - Host: peer0.org1.example.com
+              Port: 7051
+
+################################################################################
+#
+#   SECTION: Capabilities
+#
+#   - This section defines the capabilities of fabric network. This is a new
+#   concept as of v1.1.0 and should not be utilized in mixed networks with
+#   v1.0.x peers and orderers.  Capabilities define features which must be
+#   present in a fabric binary for that binary to safely participate in the
+#   fabric network.  For instance, if a new MSP type is added, newer binaries
+#   might recognize and validate the signatures from this type, while older
+#   binaries without this support would be unable to validate those
+#   transactions.  This could lead to different versions of the fabric binaries
+#   having different world states.  Instead, defining a capability for a channel
+#   informs those binaries without this capability that they must cease
+#   processing transactions until they have been upgraded.  For v1.0.x if any
+#   capabilities are defined (including a map with all capabilities turned off)
+#   then the v1.0.x peer will deliberately crash.
+#
+################################################################################
+Capabilities:
+    # Channel capabilities apply to both the orderers and the peers and must be
+    # supported by both.
+    # Set the value of the capability to true to require it.
+    Channel: &ChannelCapabilities
+        # V2_0 capability ensures that orderers and peers behave according
+        # to v2.0 channel capabilities. Orderers and peers from
+        # prior releases would behave in an incompatible way, and are therefore
+        # not able to participate in channels at v2.0 capability.
+        # Prior to enabling V2.0 channel capabilities, ensure that all
+        # orderers and peers on a channel are at v2.0.0 or later.
+        V2_0: true
+
+    # Orderer capabilities apply only to the orderers, and may be safely
+    # used with prior release peers.
+    # Set the value of the capability to true to require it.
+    Orderer: &OrdererCapabilities
+        # V2_0 orderer capability ensures that orderers behave according
+        # to v2.0 orderer capabilities. Orderers from
+        # prior releases would behave in an incompatible way, and are therefore
+        # not able to participate in channels at v2.0 orderer capability.
+        # Prior to enabling V2.0 orderer capabilities, ensure that all
+        # orderers on channel are at v2.0.0 or later.
+        V2_0: true
+
+    # Application capabilities apply only to the peer network, and may be safely
+    # used with prior release orderers.
+    # Set the value of the capability to true to require it.
+    Application: &ApplicationCapabilities
+        # V2_0 application capability ensures that peers behave according
+        # to v2.0 application capabilities. Peers from
+        # prior releases would behave in an incompatible way, and are therefore
+        # not able to participate in channels at v2.0 application capability.
+        # Prior to enabling V2.0 application capabilities, ensure that all
+        # peers on channel are at v2.0.0 or later.
+        V2_0: true
+
+################################################################################
+#
+#   SECTION: Application
+#
+#   - This section defines the values to encode into a config transaction or
+#   genesis block for application related parameters
+#
+################################################################################
+Application: &ApplicationDefaults
+
+    # Organizations is the list of orgs which are defined as participants on
+    # the application side of the network
+    Organizations:
+
+    # Policies defines the set of policies at this level of the config tree
+    # For Application policies, their canonical path is
+    #   /Channel/Application/<PolicyName>
+    Policies:
+        Readers:
+            Type: ImplicitMeta
+            Rule: "ANY Readers"
+        Writers:
+            Type: ImplicitMeta
+            Rule: "ANY Writers"
+        Admins:
+            Type: ImplicitMeta
+            Rule: "MAJORITY Admins"
+        LifecycleEndorsement:
+            Type: ImplicitMeta
+            Rule: "MAJORITY Endorsement"
+        Endorsement:
+            Type: ImplicitMeta
+            Rule: "MAJORITY Endorsement"
+
+    Capabilities:
+        <<: *ApplicationCapabilities
+################################################################################
+#
+#   SECTION: Orderer
+#
+#   - This section defines the values to encode into a config transaction or
+#   genesis block for orderer related parameters
+#
+################################################################################
+Orderer: &OrdererDefaults
+
+    # Orderer Type: The orderer implementation to start
+    OrdererType: etcdraft
+    # Addresses used to be the list of orderer addresses that clients and peers
+    # could connect to.  However, this does not allow clients to associate orderer
+    # addresses and orderer organizations which can be useful for things such
+    # as TLS validation.  The preferred way to specify orderer addresses is now
+    # to include the OrdererEndpoints item in your org definition
+    Addresses:
+        - orderer0.example.com:7050
+        - orderer1.example.com:7050
+        - orderer2.example.com:7050
+        - orderer3.example.com:7050
+        - orderer4.example.com:7050
+        - orderer5.example.com:7050
+        - orderer6.example.com:7050
+        - orderer7.example.com:7050
+        - orderer8.example.com:7050
+        - orderer9.example.com:7050
+        - orderer10.example.com:7050
+        - orderer11.example.com:7050
+        - orderer12.example.com:7050
+        - orderer13.example.com:7050
+        - orderer14.example.com:7050
+        - orderer15.example.com:7050
+        - orderer16.example.com:7050
+        - orderer17.example.com:7050
+        - orderer18.example.com:7050
+        - orderer19.example.com:7050
+        - orderer20.example.com:7050
+        - orderer21.example.com:7050
+        - orderer22.example.com:7050
+        - orderer23.example.com:7050
+        - orderer24.example.com:7050
+        - orderer25.example.com:7050
+        - orderer26.example.com:7050
+        - orderer27.example.com:7050
+        - orderer28.example.com:7050
+        - orderer29.example.com:7050
+        - orderer30.example.com:7050
+        - orderer31.example.com:7050
+        - orderer32.example.com:7050
+        - orderer33.example.com:7050
+        - orderer34.example.com:7050
+        - orderer35.example.com:7050
+        - orderer36.example.com:7050
+        - orderer37.example.com:7050
+        - orderer38.example.com:7050
+        - orderer39.example.com:7050
+        - orderer40.example.com:7050
+        - orderer41.example.com:7050
+        - orderer42.example.com:7050
+        - orderer43.example.com:7050
+        - orderer44.example.com:7050
+        - orderer45.example.com:7050
+        - orderer46.example.com:7050
+        - orderer47.example.com:7050
+        - orderer48.example.com:7050
+        - orderer49.example.com:7050
+        - orderer50.example.com:7050
+        - orderer51.example.com:7050
+        - orderer52.example.com:7050
+        - orderer53.example.com:7050
+        - orderer54.example.com:7050
+        - orderer55.example.com:7050
+        - orderer56.example.com:7050
+        - orderer57.example.com:7050
+        - orderer58.example.com:7050
+        - orderer59.example.com:7050
+        - orderer60.example.com:7050
+        - orderer61.example.com:7050
+        - orderer62.example.com:7050
+        - orderer63.example.com:7050
+        - orderer64.example.com:7050
+        - orderer65.example.com:7050
+        - orderer66.example.com:7050
+        - orderer67.example.com:7050
+        - orderer68.example.com:7050
+        - orderer69.example.com:7050
+        - orderer70.example.com:7050
+        - orderer71.example.com:7050
+        - orderer72.example.com:7050
+        - orderer73.example.com:7050
+        - orderer74.example.com:7050
+        - orderer75.example.com:7050
+        - orderer76.example.com:7050
+        - orderer77.example.com:7050
+        - orderer78.example.com:7050
+        - orderer79.example.com:7050
+        - orderer80.example.com:7050
+        - orderer81.example.com:7050
+        - orderer82.example.com:7050
+        - orderer83.example.com:7050
+        - orderer84.example.com:7050
+        - orderer85.example.com:7050
+        - orderer86.example.com:7050
+        - orderer87.example.com:7050
+        - orderer88.example.com:7050
+        - orderer89.example.com:7050
+        - orderer90.example.com:7050
+        - orderer91.example.com:7050
+        - orderer92.example.com:7050
+        - orderer93.example.com:7050
+        - orderer94.example.com:7050
+        - orderer95.example.com:7050
+        - orderer96.example.com:7050
+        - orderer97.example.com:7050
+        - orderer98.example.com:7050
+        - orderer99.example.com:7050
+        - orderer100.example.com:7050
+        - orderer101.example.com:7050
+        - orderer102.example.com:7050
+        - orderer103.example.com:7050
+        - orderer104.example.com:7050
+        - orderer105.example.com:7050
+        - orderer106.example.com:7050
+        - orderer107.example.com:7050
+        - orderer108.example.com:7050
+        - orderer109.example.com:7050
+        - orderer110.example.com:7050
+        - orderer111.example.com:7050
+        - orderer112.example.com:7050
+        - orderer113.example.com:7050
+        - orderer114.example.com:7050
+        - orderer115.example.com:7050
+        - orderer116.example.com:7050
+
+    EtcdRaft:
+        Consenters:
+        - Host: orderer0.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer0.example.com/tls/server.crt
+          ServerTLSCert: ../orderer0.example.com/tls/server.crt
+
+        - Host: orderer1.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer1.example.com/tls/server.crt
+          ServerTLSCert: ../orderer1.example.com/tls/server.crt
+
+        - Host: orderer2.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer2.example.com/tls/server.crt
+          ServerTLSCert: ../orderer2.example.com/tls/server.crt
+        
+        - Host: orderer3.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer3.example.com/tls/server.crt
+          ServerTLSCert: ../orderer3.example.com/tls/server.crt
+
+        - Host: orderer4.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer4.example.com/tls/server.crt
+          ServerTLSCert: ../orderer4.example.com/tls/server.crt
+
+        - Host: orderer5.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer5.example.com/tls/server.crt
+          ServerTLSCert: ../orderer5.example.com/tls/server.crt
+
+        - Host: orderer6.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer6.example.com/tls/server.crt
+          ServerTLSCert: ../orderer6.example.com/tls/server.crt
+
+        - Host: orderer7.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer7.example.com/tls/server.crt
+          ServerTLSCert: ../orderer7.example.com/tls/server.crt
+
+        - Host: orderer8.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer8.example.com/tls/server.crt
+          ServerTLSCert: ../orderer8.example.com/tls/server.crt
+
+        - Host: orderer9.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer9.example.com/tls/server.crt
+          ServerTLSCert: ../orderer9.example.com/tls/server.crt
+
+        - Host: orderer10.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer10.example.com/tls/server.crt
+          ServerTLSCert: ../orderer10.example.com/tls/server.crt
+
+        - Host: orderer11.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer11.example.com/tls/server.crt
+          ServerTLSCert: ../orderer11.example.com/tls/server.crt
+
+        - Host: orderer12.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer12.example.com/tls/server.crt
+          ServerTLSCert: ../orderer12.example.com/tls/server.crt
+
+        - Host: orderer13.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer13.example.com/tls/server.crt
+          ServerTLSCert: ../orderer13.example.com/tls/server.crt
+
+        - Host: orderer14.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer14.example.com/tls/server.crt
+          ServerTLSCert: ../orderer14.example.com/tls/server.crt
+
+        - Host: orderer15.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer15.example.com/tls/server.crt
+          ServerTLSCert: ../orderer15.example.com/tls/server.crt
+
+        - Host: orderer16.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer16.example.com/tls/server.crt
+          ServerTLSCert: ../orderer16.example.com/tls/server.crt
+
+        - Host: orderer17.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer17.example.com/tls/server.crt
+          ServerTLSCert: ../orderer17.example.com/tls/server.crt
+
+        - Host: orderer18.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer18.example.com/tls/server.crt
+          ServerTLSCert: ../orderer18.example.com/tls/server.crt
+
+        - Host: orderer19.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer19.example.com/tls/server.crt
+          ServerTLSCert: ../orderer19.example.com/tls/server.crt
+
+        - Host: orderer20.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer20.example.com/tls/server.crt
+          ServerTLSCert: ../orderer20.example.com/tls/server.crt
+
+        - Host: orderer21.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer21.example.com/tls/server.crt
+          ServerTLSCert: ../orderer21.example.com/tls/server.crt
+
+        - Host: orderer22.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer22.example.com/tls/server.crt
+          ServerTLSCert: ../orderer22.example.com/tls/server.crt
+
+        - Host: orderer23.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer23.example.com/tls/server.crt
+          ServerTLSCert: ../orderer23.example.com/tls/server.crt
+
+        - Host: orderer24.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer24.example.com/tls/server.crt
+          ServerTLSCert: ../orderer24.example.com/tls/server.crt
+
+        - Host: orderer25.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer25.example.com/tls/server.crt
+          ServerTLSCert: ../orderer25.example.com/tls/server.crt
+
+        - Host: orderer26.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer26.example.com/tls/server.crt
+          ServerTLSCert: ../orderer26.example.com/tls/server.crt
+
+        - Host: orderer27.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer27.example.com/tls/server.crt
+          ServerTLSCert: ../orderer27.example.com/tls/server.crt
+
+        - Host: orderer28.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer28.example.com/tls/server.crt
+          ServerTLSCert: ../orderer28.example.com/tls/server.crt
+
+        - Host: orderer29.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer29.example.com/tls/server.crt
+          ServerTLSCert: ../orderer29.example.com/tls/server.crt
+
+        - Host: orderer30.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer30.example.com/tls/server.crt
+          ServerTLSCert: ../orderer30.example.com/tls/server.crt
+
+        - Host: orderer31.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer31.example.com/tls/server.crt
+          ServerTLSCert: ../orderer31.example.com/tls/server.crt
+
+        - Host: orderer32.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer32.example.com/tls/server.crt
+          ServerTLSCert: ../orderer32.example.com/tls/server.crt
+
+        - Host: orderer33.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer33.example.com/tls/server.crt
+          ServerTLSCert: ../orderer33.example.com/tls/server.crt
+
+        - Host: orderer34.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer34.example.com/tls/server.crt
+          ServerTLSCert: ../orderer34.example.com/tls/server.crt
+
+        - Host: orderer35.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer35.example.com/tls/server.crt
+          ServerTLSCert: ../orderer35.example.com/tls/server.crt
+
+        - Host: orderer36.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer36.example.com/tls/server.crt
+          ServerTLSCert: ../orderer36.example.com/tls/server.crt
+
+        - Host: orderer37.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer37.example.com/tls/server.crt
+          ServerTLSCert: ../orderer37.example.com/tls/server.crt
+
+        - Host: orderer38.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer38.example.com/tls/server.crt
+          ServerTLSCert: ../orderer38.example.com/tls/server.crt
+
+        - Host: orderer39.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer39.example.com/tls/server.crt
+          ServerTLSCert: ../orderer39.example.com/tls/server.crt
+
+        - Host: orderer40.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer40.example.com/tls/server.crt
+          ServerTLSCert: ../orderer40.example.com/tls/server.crt
+
+        - Host: orderer41.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer41.example.com/tls/server.crt
+          ServerTLSCert: ../orderer41.example.com/tls/server.crt
+
+        - Host: orderer42.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer42.example.com/tls/server.crt
+          ServerTLSCert: ../orderer42.example.com/tls/server.crt
+
+        - Host: orderer43.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer43.example.com/tls/server.crt
+          ServerTLSCert: ../orderer43.example.com/tls/server.crt
+
+        - Host: orderer44.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer44.example.com/tls/server.crt
+          ServerTLSCert: ../orderer44.example.com/tls/server.crt
+
+        - Host: orderer45.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer45.example.com/tls/server.crt
+          ServerTLSCert: ../orderer45.example.com/tls/server.crt
+
+        - Host: orderer46.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer46.example.com/tls/server.crt
+          ServerTLSCert: ../orderer46.example.com/tls/server.crt
+
+        - Host: orderer47.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer47.example.com/tls/server.crt
+          ServerTLSCert: ../orderer47.example.com/tls/server.crt
+
+        - Host: orderer48.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer48.example.com/tls/server.crt
+          ServerTLSCert: ../orderer48.example.com/tls/server.crt
+
+        - Host: orderer49.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer49.example.com/tls/server.crt
+          ServerTLSCert: ../orderer49.example.com/tls/server.crt
+
+        - Host: orderer50.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer50.example.com/tls/server.crt
+          ServerTLSCert: ../orderer50.example.com/tls/server.crt
+
+        - Host: orderer51.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer51.example.com/tls/server.crt
+          ServerTLSCert: ../orderer51.example.com/tls/server.crt
+
+        - Host: orderer52.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer52.example.com/tls/server.crt
+          ServerTLSCert: ../orderer52.example.com/tls/server.crt
+
+        - Host: orderer53.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer53.example.com/tls/server.crt
+          ServerTLSCert: ../orderer53.example.com/tls/server.crt
+
+        - Host: orderer54.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer54.example.com/tls/server.crt
+          ServerTLSCert: ../orderer54.example.com/tls/server.crt
+
+        - Host: orderer55.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer55.example.com/tls/server.crt
+          ServerTLSCert: ../orderer55.example.com/tls/server.crt
+
+        - Host: orderer56.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer56.example.com/tls/server.crt
+          ServerTLSCert: ../orderer56.example.com/tls/server.crt
+
+        - Host: orderer57.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer57.example.com/tls/server.crt
+          ServerTLSCert: ../orderer57.example.com/tls/server.crt
+
+        - Host: orderer58.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer58.example.com/tls/server.crt
+          ServerTLSCert: ../orderer58.example.com/tls/server.crt
+
+        - Host: orderer59.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer59.example.com/tls/server.crt
+          ServerTLSCert: ../orderer59.example.com/tls/server.crt
+
+        - Host: orderer60.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer60.example.com/tls/server.crt
+          ServerTLSCert: ../orderer60.example.com/tls/server.crt
+
+        - Host: orderer61.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer61.example.com/tls/server.crt
+          ServerTLSCert: ../orderer61.example.com/tls/server.crt
+
+        - Host: orderer62.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer62.example.com/tls/server.crt
+          ServerTLSCert: ../orderer62.example.com/tls/server.crt
+
+        - Host: orderer63.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer63.example.com/tls/server.crt
+          ServerTLSCert: ../orderer63.example.com/tls/server.crt
+
+        - Host: orderer64.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer64.example.com/tls/server.crt
+          ServerTLSCert: ../orderer64.example.com/tls/server.crt
+
+        - Host: orderer65.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer65.example.com/tls/server.crt
+          ServerTLSCert: ../orderer65.example.com/tls/server.crt
+
+        - Host: orderer66.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer66.example.com/tls/server.crt
+          ServerTLSCert: ../orderer66.example.com/tls/server.crt
+
+        - Host: orderer67.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer67.example.com/tls/server.crt
+          ServerTLSCert: ../orderer67.example.com/tls/server.crt
+
+        - Host: orderer68.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer68.example.com/tls/server.crt
+          ServerTLSCert: ../orderer68.example.com/tls/server.crt
+
+        - Host: orderer69.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer69.example.com/tls/server.crt
+          ServerTLSCert: ../orderer69.example.com/tls/server.crt
+
+        - Host: orderer70.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer70.example.com/tls/server.crt
+          ServerTLSCert: ../orderer70.example.com/tls/server.crt
+
+        - Host: orderer71.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer71.example.com/tls/server.crt
+          ServerTLSCert: ../orderer71.example.com/tls/server.crt
+
+        - Host: orderer72.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer72.example.com/tls/server.crt
+          ServerTLSCert: ../orderer72.example.com/tls/server.crt
+
+        - Host: orderer73.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer73.example.com/tls/server.crt
+          ServerTLSCert: ../orderer73.example.com/tls/server.crt
+
+        - Host: orderer74.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer74.example.com/tls/server.crt
+          ServerTLSCert: ../orderer74.example.com/tls/server.crt
+
+        - Host: orderer75.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer75.example.com/tls/server.crt
+          ServerTLSCert: ../orderer75.example.com/tls/server.crt
+
+        - Host: orderer76.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer76.example.com/tls/server.crt
+          ServerTLSCert: ../orderer76.example.com/tls/server.crt
+
+        - Host: orderer77.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer77.example.com/tls/server.crt
+          ServerTLSCert: ../orderer77.example.com/tls/server.crt
+
+        - Host: orderer78.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer78.example.com/tls/server.crt
+          ServerTLSCert: ../orderer78.example.com/tls/server.crt
+
+        - Host: orderer79.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer79.example.com/tls/server.crt
+          ServerTLSCert: ../orderer79.example.com/tls/server.crt
+
+        - Host: orderer80.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer80.example.com/tls/server.crt
+          ServerTLSCert: ../orderer80.example.com/tls/server.crt
+
+        - Host: orderer81.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer81.example.com/tls/server.crt
+          ServerTLSCert: ../orderer81.example.com/tls/server.crt
+
+        - Host: orderer82.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer82.example.com/tls/server.crt
+          ServerTLSCert: ../orderer82.example.com/tls/server.crt
+
+        - Host: orderer83.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer83.example.com/tls/server.crt
+          ServerTLSCert: ../orderer83.example.com/tls/server.crt
+
+        - Host: orderer84.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer84.example.com/tls/server.crt
+          ServerTLSCert: ../orderer84.example.com/tls/server.crt
+
+        - Host: orderer85.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer85.example.com/tls/server.crt
+          ServerTLSCert: ../orderer85.example.com/tls/server.crt
+
+        - Host: orderer86.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer86.example.com/tls/server.crt
+          ServerTLSCert: ../orderer86.example.com/tls/server.crt
+
+        - Host: orderer87.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer87.example.com/tls/server.crt
+          ServerTLSCert: ../orderer87.example.com/tls/server.crt
+
+        - Host: orderer88.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer88.example.com/tls/server.crt
+          ServerTLSCert: ../orderer88.example.com/tls/server.crt
+
+        - Host: orderer89.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer89.example.com/tls/server.crt
+          ServerTLSCert: ../orderer89.example.com/tls/server.crt
+
+        - Host: orderer90.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer90.example.com/tls/server.crt
+          ServerTLSCert: ../orderer90.example.com/tls/server.crt
+
+        - Host: orderer91.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer91.example.com/tls/server.crt
+          ServerTLSCert: ../orderer91.example.com/tls/server.crt
+
+        - Host: orderer92.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer92.example.com/tls/server.crt
+          ServerTLSCert: ../orderer92.example.com/tls/server.crt
+
+        - Host: orderer93.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer93.example.com/tls/server.crt
+          ServerTLSCert: ../orderer93.example.com/tls/server.crt
+
+        - Host: orderer94.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer94.example.com/tls/server.crt
+          ServerTLSCert: ../orderer94.example.com/tls/server.crt
+
+        - Host: orderer95.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer95.example.com/tls/server.crt
+          ServerTLSCert: ../orderer95.example.com/tls/server.crt
+
+        - Host: orderer96.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer96.example.com/tls/server.crt
+          ServerTLSCert: ../orderer96.example.com/tls/server.crt
+
+        - Host: orderer97.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer97.example.com/tls/server.crt
+          ServerTLSCert: ../orderer97.example.com/tls/server.crt
+
+        - Host: orderer98.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer98.example.com/tls/server.crt
+          ServerTLSCert: ../orderer98.example.com/tls/server.crt
+
+        - Host: orderer99.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer99.example.com/tls/server.crt
+          ServerTLSCert: ../orderer99.example.com/tls/server.crt
+
+        - Host: orderer100.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer100.example.com/tls/server.crt
+          ServerTLSCert: ../orderer100.example.com/tls/server.crt
+
+        - Host: orderer101.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer101.example.com/tls/server.crt
+          ServerTLSCert: ../orderer101.example.com/tls/server.crt
+
+        - Host: orderer102.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer102.example.com/tls/server.crt
+          ServerTLSCert: ../orderer102.example.com/tls/server.crt
+
+        - Host: orderer103.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer103.example.com/tls/server.crt
+          ServerTLSCert: ../orderer103.example.com/tls/server.crt
+
+        - Host: orderer104.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer104.example.com/tls/server.crt
+          ServerTLSCert: ../orderer104.example.com/tls/server.crt
+
+        - Host: orderer105.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer105.example.com/tls/server.crt
+          ServerTLSCert: ../orderer105.example.com/tls/server.crt
+
+        - Host: orderer106.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer106.example.com/tls/server.crt
+          ServerTLSCert: ../orderer106.example.com/tls/server.crt
+
+        - Host: orderer107.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer107.example.com/tls/server.crt
+          ServerTLSCert: ../orderer107.example.com/tls/server.crt
+
+        - Host: orderer108.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer108.example.com/tls/server.crt
+          ServerTLSCert: ../orderer108.example.com/tls/server.crt
+
+        - Host: orderer109.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer109.example.com/tls/server.crt
+          ServerTLSCert: ../orderer109.example.com/tls/server.crt
+
+        - Host: orderer110.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer110.example.com/tls/server.crt
+          ServerTLSCert: ../orderer110.example.com/tls/server.crt
+
+        - Host: orderer111.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer111.example.com/tls/server.crt
+          ServerTLSCert: ../orderer111.example.com/tls/server.crt
+
+        - Host: orderer112.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer112.example.com/tls/server.crt
+          ServerTLSCert: ../orderer112.example.com/tls/server.crt
+
+        - Host: orderer113.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer113.example.com/tls/server.crt
+          ServerTLSCert: ../orderer113.example.com/tls/server.crt
+
+        - Host: orderer114.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer114.example.com/tls/server.crt
+          ServerTLSCert: ../orderer114.example.com/tls/server.crt
+
+        - Host: orderer115.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer115.example.com/tls/server.crt
+          ServerTLSCert: ../orderer115.example.com/tls/server.crt
+
+        - Host: orderer116.example.com
+          Port: 7050
+          ClientTLSCert: ../orderer116.example.com/tls/server.crt
+          ServerTLSCert: ../orderer116.example.com/tls/server.crt
+
+    # Batch Timeout: The amount of time to wait before creating a batch
+    BatchTimeout: 2s
+
+    # Batch Size: Controls the number of messages batched into a block
+    BatchSize:
+
+        # Max Message Count: The maximum number of messages to permit in a batch
+        MaxMessageCount: 100
+
+        # Absolute Max Bytes: The absolute maximum number of bytes allowed for
+        # the serialized messages in a batch.
+        AbsoluteMaxBytes: 99 MB
+
+        # Preferred Max Bytes: The preferred maximum number of bytes allowed for
+        # the serialized messages in a batch. A message larger than the preferred
+        # max bytes will result in a batch larger than preferred max bytes.
+        PreferredMaxBytes: 512 KB
+
+    # Organizations is the list of orgs which are defined as participants on
+    # the orderer side of the network
+    Organizations:
+
+    # Policies defines the set of policies at this level of the config tree
+    # For Orderer policies, their canonical path is
+    #   /Channel/Orderer/<PolicyName>
+    Policies:
+        Readers:
+            Type: ImplicitMeta
+            Rule: "ANY Readers"
+        Writers:
+            Type: ImplicitMeta
+            Rule: "ANY Writers"
+        Admins:
+            Type: ImplicitMeta
+            Rule: "MAJORITY Admins"
+        # BlockValidation specifies what signatures must be included in the block
+        # from the orderer for the peer to validate it.
+        BlockValidation:
+            Type: ImplicitMeta
+            Rule: "ANY Writers"
+
+################################################################################
+#
+#   CHANNEL
+#
+#   This section defines the values to encode into a config transaction or
+#   genesis block for channel related parameters.
+#
+################################################################################
+Channel: &ChannelDefaults
+    # Policies defines the set of policies at this level of the config tree
+    # For Channel policies, their canonical path is
+    #   /Channel/<PolicyName>
+    Policies:
+        # Who may invoke the 'Deliver' API
+        Readers:
+            Type: ImplicitMeta
+            Rule: "ANY Readers"
+        # Who may invoke the 'Broadcast' API
+        Writers:
+            Type: ImplicitMeta
+            Rule: "ANY Writers"
+        # By default, who may modify elements at this config level
+        Admins:
+            Type: ImplicitMeta
+            Rule: "MAJORITY Admins"
+
+    # Capabilities describes the channel level capabilities, see the
+    # dedicated Capabilities section elsewhere in this file for a full
+    # description
+    Capabilities:
+        <<: *ChannelCapabilities
+
+################################################################################
+#
+#   Profile
+#
+#   - Different configuration profiles may be encoded here to be specified
+#   as parameters to the configtxgen tool
+#
+################################################################################
+Profiles:
+
+    TwoOrgsApplicationGenesis:
+        <<: *ChannelDefaults
+        Orderer:
+            <<: *OrdererDefaults
+            Organizations:
+                - *OrdererOrg
+            Capabilities: *OrdererCapabilities
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - *Org1
+            Capabilities: *ApplicationCapabilities
+
+
+    TwoOrgsChannel:
+        <<: *ChannelDefaults
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - *Org1
